@@ -1,0 +1,49 @@
+/* 픽셀체 */
+
+@font-face {
+  font-family: 'NeoDunggeunmo';
+  src: url('/portfolio/fonts/NeoDunggeunmo.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 에스코어드림 */
+
+
+/* 라이트 */
+@font-face {
+  font-family: 'coreLight';
+  src: url('/portfolio/fonts/S-CoreDream-3Light.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* regular */
+@font-face {
+  font-family: 'coreRegular';
+  src: url('/portfolio/fonts/S-CoreDream-4Regular.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+/* medium */
+@font-face {
+  font-family: 'coreMedium';
+  src: url('/portfolio/fonts/S-CoreDream-5Medium.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 르페리 얇은거 */
+@font-face {
+  font-family: 'LeWhite';
+  src: url('/portfolio/fonts/LeferiPoint-WhiteObliqueA.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* 레라리 굵은거 */
+@font-face {
+  font-family: 'LeBlack';
+  src: url('/portfolio/fonts/LeferiPoint-BlackObliqueA.woff');
+  font-weight: normal;
+  font-style: normal;
+}
