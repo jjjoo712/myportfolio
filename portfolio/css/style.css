@@ -81,7 +81,8 @@ li{
 
 /* common */
 .fontcore{font-family: 'coreRegular';}
-
+.nanum{font-family: 'nanum';}
+.backcolor{background-color: black;color:#feee01;}
 
 
 
@@ -162,7 +163,7 @@ padding:30px;} */
 }
 
 
-#gnb a.act {color: #ed6a5e }
+#gnb a.act {color: #ed6a5e; }
 
 @media (min-width:1280px){
   #main > div{height: 100vh;}
@@ -232,9 +233,11 @@ padding:30px;} */
     animation-iteration-count: infinite;
     animation-direction: alternate;
 
-  animation-timing-function: linear;
+
 }
 .point{color:white;}
+
+#portfolio .mt-1{font-size: 2rem;}
 
 .aboutMe{
   
@@ -308,14 +311,12 @@ padding:30px;} */
 .myActivity {
   position:relative;
    width: 30%;
-  height: 40vh;
-  /* height:18rem; */
   border: 5px solid #222;
   text-align: center;
   border-radius: 20px;
   z-index: 0;
   background-color: #ff6845;
-  margin-top:-25%;margin-left:70%;
+  margin-top:-18%;margin-left:70%;
   cursor: pointer;
   
 }
@@ -359,13 +360,53 @@ padding:30px;} */
 }
 
 #portfolio .sir{background-color:orange;}
-.gosim{
+.poo{
+  position:absolute;
+  left:0;
+  top:15%;
+  z-index: 5;
+}
+.pooment{
+  color:white;
+  font-family: 'coreLight';
+  transform: translateX(-116%);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.tooth{
   position: absolute;
   left:10%;
-  bottom:28%;
-  width:100%;
+  bottom:35%;
   z-index: 0;
 }
+.tooth img{width:50%;}
+@-webkit-keyframes pooment{
+  0%{
+    color:white
+  }
+  50%{
+    color:black;
+  }
+  to{
+    color:white;
+  }
+}
+
+
+
+
+
+.pooment{
+    animation-name: pooment;
+    animation-delay: 0;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}
+
+
+
+
+
 /*무임승차 : 최적화*/
 
 /* me */
@@ -377,10 +418,10 @@ transition:.5s;
 color:black;
 transition-delay: 1s;}
 
-.aos-animate h2{
+/* .aos-animate h2{
   background-color: red !important;
   color:white !important;
-}
+} */
 .portColor{background-color: #6d48e5;}
 
 .port {
@@ -488,12 +529,15 @@ input[type=checkbox]{display: none;}
 
 }
 .mySwiper .swiper-pagination-bullet:nth-child(4):after{
-  content:"준비 중";
+  content:"DAT-DAT";
   display: block;
   position:absolute;
   top:100%;left:20%;
   font-size: 1.2rem;
-
+  
+}
+.mySwiper .swiper-pagination-bullet:nth-child(4){
+  
 }
 
 .popBox1{
@@ -552,36 +596,6 @@ input[type=checkbox]{display: none;}
 
 #me .subspan{color:white;background-color: #ed6a5e;}
 
-@media (max-width:800px) {
-  #hd{top:0;}
-
-  .open + #gnb{top:55px;}
-  #me .pop{width:90%;
-    font-size: 1rem;
-    margin:1rem auto;
-    height:auto;
-
-  }
- #me .popBox{
-
- }
- #me .popBox1{
-  border: 0;padding: 0; width: unset;
- }
- #me .popBox2{
-  width:unset;
- }
-#me .portName {
-  width: 90%;
-  margin-bottom: 1rem;
-}
-#me .portName2{width:80%; margin-bottom:1rem}
-
-
-.skFull,.skEmpty{width:1rem;height:1rem;border-radius: 50%;}
-.skEmpty{}
-  
-}
 
 
 
@@ -660,41 +674,14 @@ body{
  
 }
 
+/* 마우스 커서 */
+
 /* html,body {
   cursor: url('/portfolio/img/cursor.cur'), auto;
 } */
 
 
 
-@media (max-width: 800px) {
-  .aboutMe{
-    width:90%;margin-top:20%;
-    font-size:1rem;
-    height:auto;  
-  }
-    .mySkill{
-      width:90%; 
-      height:auto;
-      font-size: 1rem;
-      bottom:20%;left:0;right:0;
-      margin:1rem auto;
-      
-
-    }
-    .mySkill:hover{
-      margin-left:auto;
-    }
-    .mySkill:hover{
-      left:0;
-      }
-    .myActivity{
-      margin:0 auto;
-      font-size: 1rem;
-      width:90%;
-      height:auto;
-    }
- 
-  }
 
 
 
@@ -752,9 +739,9 @@ body{
     }
   }
 
-  #preinterview1 .typing{
-    width: 45ch;
-    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  #preinterview1 .tyPing{
+    width: 33ch;
+    animation: tyPing 2s steps(22), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid;
@@ -763,7 +750,7 @@ body{
   }
 
 
-  @keyframes typing {
+  @keyframes tyPing {
     from {
       width: 0
     }
@@ -778,55 +765,231 @@ body{
 
 
   
-  @media (max-width:1280px) {
-    #me .swiper, 
-    #me .swiper-wrapper{ height:auto; flex-direction: column;}
-    #me .pop{ position: unset; }
-    
-    
-  }
-
-
-  @media (max-width:800px){
-
   
-    #preinterview1{top:0;}
-    #preinterview1 .look{
-      width:100%;height:100vh;
-    }
+
+
+    /* name card */
+
+    #card {
+      background: #fff;
+      height:auto;
+      margin: 3% auto;
+      padding: 20px 30px;
+      border: 1px solid white;
+      text-align: center; }
+      #card h1 {
+        color: #dc152c;
+        font-weight: normal;
+        font-size: 48px;
+        margin: 0 0 10px 0;
+        font-family: 'LeBlack';
+       }
+        #card h1::first-letter {
+          color: #194ff7; }
+        #card h1 b {
+          color: #f1840b;
+          font-weight: normal; }
+        #card h1 b + b {
+          color: #194ff7; }
+        #card h1 b + b + b {
+          color: #00940e; }
+          #card h1 b + b + b + b{
+            color:#f1840b;
+          }
+        #card h1 b + b + b + b + b{
+          color:#00940e;
+        }
+        
+    
+    .content {text-align: left;}
+    .content ul {padding: 0; margin: 0;font: 16px Arial; }
+    .content ul li {list-style: none;}
+    .content ul li a {color: #12C;}
+    .content ul li span {display: block;width: 100%;margin-bottom: 2px; }
+    .content ul li span:nth-child(2) {margin-bottom: 10px;}
+    .content ul li span:nth-child(2) a {color: #093;text-decoration: none; }
+    .content ul li span:nth-child(3),
+    .content ul li span:nth-child(4) {font-size: 14px; }
+    .content .text {border: 1px solid #7ec6fd;float: left;width: 100%;margin-bottom: 10px; }
+    .content .text h2 {position: relative;float: left; font-size: 100%; font-weight: normal; padding: 0;
+    margin: 5px 10px; }
+    #card .textLine{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 0;
+      background: white;
+      animation: typing1 2s steps(22), blink .5s step-end infinite alternate;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid;
+      /* same as background */
+      /* border-left: 0.1em solid black;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      -webkit-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite;
+      -moz-animation: typing 1s steps(20, end), blink-caret 1s step-end infinite; */
+     }
+    
+    /* Animate CSS : https://daneden.me/animate/ */
+    /* .animated {
+      -webkit-animation-fill-mode: both;
+      -o-animation-fill-mode: both;
+      -moz-animation-fill-mode: both;
+      -khtml-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      animation-fill-mode: both;
+      -webkit-animation-duration: 0.4s;
+      -o-animation-duration: 0.4s;
+      -moz-animation-duration: 0.4s;
+      -khtml-animation-duration: 0.4s;
+      -ms-animation-duration: 0.4s;
+      animation-duration: 0.4s; }
+    
+    .fadeIn {
+      -webkit-animation-name: fadeIn;
+      -o-animation-name: fadeIn;
+      -moz-animation-name: fadeIn;
+      -khtml-animation-name: fadeIn;
+      -ms-animation-name: fadeIn;
+      animation-name: fadeIn; } */
+    
+    /* Typing keyframes */
+    @-webkit-keyframes typing {
+      0% {
+        width: 100%; }
+    
+      100% {
+        width: 0; } }
+    
+    @-moz-keyframes typing {
+      0% {
+        width: 100%; }
+    
+      100% {
+        width: 0; } }
+    
+    @-o-keyframes typing {
+      0% {
+        width: 100%; }
+    
+      100% {
+        width: 0; } }
+    
+    @keyframes typing {
+      0% {
+        width: 100%; }
+    
+      100% {
+        width: 0; } }
     
 
-      #preinterview1 .typing{
-    width: 34ch;
-    border-right: 2px solid;
-    font-size: 1rem;
-  
-  }
 
-    
-    }
-    
+/* footer */
+#ft div{
+  font-size: 2rem;
+  font-family: 'LeBlack';
+}
 
-    #preinterview .Hope1{
-      height:80vh;
-      border:2px solid;
 
-    }
-    #preinterview .Hope2{
-      height:15vh;
-      border:2px solid;
+
+
+
+
+        @media (max-width:1280px) {
+          #me .swiper, 
+          #me .swiper-wrapper{ height:auto; flex-direction: column;}
+          #me .pop{ position: unset; }
+          
+          
+        }
       
-    }
-    #preinterview .HopeBox{}
-    #preinterview .HopeBox .hb1{
-      height:30vh;
-      border:2px solid;
-    }
-    #preinterview .HopeBox .hb2{
-      height:30vh;
-      border:2px solid;
-    }
-    #preinterview .Hope3{
-      height:15vh;
-      border:2px solid;
-    }
+      
+        @media (max-width:800px) {
+          #hd{top:0;}
+        
+          .open + #gnb{top:55px;}
+          #me .pop{width:90%;
+            font-size: 1rem;
+            margin:1rem auto;
+            height:auto;
+        
+          }
+         #me .popBox{
+        
+         }
+         #me .popBox1{
+          border: 0;padding: 0; width: unset;
+         }
+         #me .popBox2{
+          width:unset;
+         }
+        #me .portName {
+          width: 90%;
+          margin-bottom: 1rem;
+        }
+        #me .portName2{width:80%; margin-bottom:1rem}
+        
+        
+        .skFull,.skEmpty{width:1rem;height:1rem;border-radius: 50%;}
+        .skEmpty{}
+
+        .aboutMe{
+          width:90%;margin-top:20%;
+          font-size:1rem;
+          height:auto;  
+        }
+          .mySkill{
+            width:90%; 
+            height:auto;
+            font-size: 1rem;
+            bottom:20%;left:0;right:0;
+            margin:1rem auto;
+            
+      
+          }
+          .mySkill:hover{
+            margin-left:auto;
+          }
+          .mySkill:hover{
+            left:0;
+            }
+          .myActivity{
+            margin:0 auto;
+            font-size: 1rem;
+            width:90%;
+            height:auto;
+          }
+
+          
+        }
+        
+
+
+
+        @media (max-width:800px){
+      
+        
+          #preinterview1{top:0;}
+          #preinterview1 .look{
+            width:100%;height:100vh;
+          }
+          
+      
+            #preinterview1 .tyPing{
+          width: 34ch;
+          border-right: 2px solid;
+          font-size: 1rem;
+        
+        }
+      
+
+        #card h1{font-size: 2rem;}
+          
+
+
+        #portfolio .mt-1{font-size: 1.2rem;}
+
+        .ddBox dd{text-decoration: underline;}
+          }
+          
