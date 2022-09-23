@@ -1,13 +1,11 @@
-// window.onload= function(){
-  
-// }
+
 
 
 
 $(document).ready(function(){ 
 
 
-  //AOS.init();
+  AOS.init();
 
 
   
@@ -52,30 +50,38 @@ $(window).on('resize', function () {
 
 
 
-  $('#allMenu').click(function(e){
+  
+$('#allMenu').click(function(e){
    
-    e.preventDefault();
+  e.preventDefault();
+  
+  $(this).toggleClass('open');
+})
+
+
+
+
+
+$('#gnb a').click(function(e){
+  var clicka = $(this);
+  e.preventDefault();
+  $("#allMenu").removeClass('open');
+  
+  $('body,html').animate({
     
-    $(this).toggleClass('open');
+    scrollTop : $(clicka.attr('href')).offset().top
+    
+  },400,function(){
+    $('#gnb a').removeClass('act')
+    clicka.addClass('act');
   })
+})
 
 
 
 
- 
-  $('#gnb a').click(function(e){
-    var clicka = $(this);
-    e.preventDefault();
-    $("#allMenu,#gnb").hide();
-    $('body,html').animate({
-      
-      scrollTop : $(clicka.attr('href')).offset().top
-      
-    },400,function(){
-      $('#gnb a').removeClass('act')
-      clicka.addClass('act');
-    })
-  })
+
+
 
   // 퀵토글 만들기
    $("#quick > a").click(function(){
@@ -94,13 +100,13 @@ $(window).on('resize', function () {
  
       // 메인 스크롤 안터지게 한거
       
-      $('#preinterview1 .hobbyImg, #preinterview1 .clickAni').click(function(){
-        $('#preinterview1').removeClass('wow');
+      $('#readyBox .hobbyImg, #readyBox .clickAni').click(function(){
+        $('#readyBox').removeClass('openBox');
         $('body').removeClass('ofy');
         
       })
 
-      if($('#preinterview1.wow').length > 0 ){
+      if($('#readyBox.openBox').length > 0 ){
        
 
         $('body, html').animate({scrollTop : 0}, 50)
@@ -150,44 +156,3 @@ $(window).on('resize', function () {
 
 
 
-
-
-// const toTopEl = document.querySelector('#quick');
-
-// window.addEventListener('scroll', _.throttle(function(){
-//   console.log(window.scrollY);
-//   if (window.scrollY > 200){
-  
-//     // 버튼보이기
-//     gsap.to('#quick',.2,{
-//       x: 0
-//     });
-
-//   }  else{
-//     // badgeEl.style.display = 'block';
-
-//     // 버튼숨기기
-//     gsap.to('#quick',.2,{
-//       x: 0
-//     });
-//   }
-// }, 300));
-// //_.throttle(함수, 시간)
-
-
-var php = function(){
-	document.querySelector(".php").className = "php1";
-};
-var css = function(){
-	document.querySelector(".css").className = "css1";
-};
-var htm = function(){
-document.querySelector(".htm").className = "htm1";	
-};
-var jav = function(){
-document.querySelector(".javascript").className = "javascript1";	
-};
-setTimeout(php,1000);
-setTimeout(css,3000);
-setTimeout(htm,5000);
-setTimeout(jav,7000);
